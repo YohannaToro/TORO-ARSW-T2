@@ -29,8 +29,7 @@ public class WeatherRepository implements IweatherRepository{
     @Override
     public entity find(String id) {
 
-        System.out.println("hola");
-        entity quote = restTemplate.getForObject("https://openweathermap.org/data/2.5/weather?q=Bogota&appid=b6907d289e10d714a6e88b30761fae22", entity.class);
+        entity quote = restTemplate.getForObject("https://openweathermap.org/data/2.5/weather?q="+id+"&appid=b6907d289e10d714a6e88b30761fae22", entity.class);
         System.out.println(quote.getName());
 
         LocalDateTime dateTime =  LocalDateTime.now();
@@ -38,7 +37,7 @@ public class WeatherRepository implements IweatherRepository{
             data.put(quote,quote.getName());
         }else{
             if(dateTime.getMinute()>5){
-                quote = restTemplate.getForObject("https://openweathermap.org/data/2.5/weather?q=Bogota&appid=b6907d289e10d714a6e88b30761fae22", entity.class);
+                quote = restTemplate.getForObject("https://openweathermap.org/data/2.5/weather?q="+id+"&appid=b6907d289e10d714a6e88b30761fae22", entity.class);
             }
         }
 
