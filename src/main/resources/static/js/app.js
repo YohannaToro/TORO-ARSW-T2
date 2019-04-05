@@ -4,7 +4,8 @@ app = (function () {
     return {
 
         getWeatherByCityName:function(name){
-            return apiclient.getWeatherByCityName(name, function (weathers) {
+            console.log("parceeeeeee");
+            return appclient.getWeatherByCityName(name, function (weathers) {
                 console.log("parceeeeeee");
 
                     $("#tableRepository").append("<tr><td>" + weathers.id

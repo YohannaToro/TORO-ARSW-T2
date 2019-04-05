@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @Controller
-@ComponentScan("edu.eci")
+//@ComponentScan("edu.eci")
 public class ParcialApplication {
 
 	public static void main(String[] args) {
@@ -16,9 +16,6 @@ public class ParcialApplication {
 				"");
 		SpringApplication.run(ParcialApplication.class, args);
 	}
-	@RequestMapping("/")
-	String index() {
-		return "index";
-	}
+
 
 }
